@@ -1,0 +1,9 @@
+.input{
+    width: 100%;
+    display: grid;
+    gap: 4px;
+}
+
+.input>input:hover{
+    background: #f4f5fa;
+}

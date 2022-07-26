@@ -1,17 +1,32 @@
-import React from 'react';
+import './css/global.css';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Empresa from './pages/Empresa';
+import Empresas from "./pages/Empresas";
+
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    BrowserRouter
+} from "react-router-dom";
+import Card from "./pages/Card";
+
+function App(){
+    const [empresa, setEmpresa] = useState()
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path={"/"} element={<Empresas setEmpresa={setEmpresa}/>}/>
+                <Route path={"/cadastro"} element={<Empresa empresa={empresa}/>}/>
+                <Route path={"/card"} element={<Card empresa={empresa}/>}/>
+            </Routes>
+        </BrowserRouter>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <App/>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

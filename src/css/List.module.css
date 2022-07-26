@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    gap: 4px;
+    align-content: flex-start;
+}
+
+.row {
+    height: 35px;
+    border: #e0e0e0 1px solid;
+
+    display: flex;
+    align-items: center;
+}
+
+.rowHeader {
+    font-weight: 550;
+}
